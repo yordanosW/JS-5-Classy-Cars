@@ -1,7 +1,9 @@
 let baseClassTestElement = document.querySelector("#base-class-test")
 let derivedClassTestElement = document.querySelector("#derived-class-test")
 let derivedClass2TestElement = document.querySelector("#derived-class-2-test")
-
+baseClassTestElement.style.color = "red"
+derivedClassTestElement.style.color = "red"
+derivedClass2TestElement.style.color = "red"
 //wrap everything in try catch since they won't have classes to begin with
 try {
     //Base Class tests
@@ -11,26 +13,26 @@ try {
         baseClassTestElement.style.color = "green"
     }
 } catch (error) {
-    baseClassTestElement.style.color = "red"
+    
     console.log("some base class tests have failed error:", error)
 }
 
 try {
     //Derived Class tests
     let sedanPasses = false
-    let sedan = new SUV("Jexus", true)
+    let sedan = new Sedan("Jexus", true)
     if(sedan.model === "Jexus" && sedan.drive() === "Jexus drives" && sedan.backupCamera === true){
         sedanPasses = true
     }
     let suvPasses = false
-    let suv = new SUV("Jahoe", true)
+    let suv = new Suv("Jahoe", true)
     if(suv.model === "Jahoe" && suv.drive() === "Jahoe drives" && suv.offroadPackage === true){
         suvPasses = true
     }
     let truckPasses = false
-    let truck = new SUV("Jord J-051", 50000)
+    let truck = new Truck("Jord J-051", 50000)
     if(truck.model === "Jord J-051" && truck.drive() === "Jord J-051 drives" && truck.towingCapacity === 50000){
-        suvPasses = true
+        truckPasses = true
     }
     //all dervied tests pass?
     if(sedanPasses && suvPasses && truckPasses){
@@ -38,7 +40,7 @@ try {
         derivedClassTestElement.style.color = "green"
     }
 } catch (error) {
-    derivedClassTestElement.style.color = "red"
+    
     console.log("some derived class tests have failed error:", error)
 }
 
@@ -50,6 +52,6 @@ try {
         derivedClass2TestElement.style.color = "green"
     }
 } catch (error) {
-    derivedClass2TestElement.style.color = "red"
+    
     console.log("some derived class 2 tests have failed error:", error)
 }
