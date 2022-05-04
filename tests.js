@@ -1,5 +1,5 @@
 let baseClassTestElement = document.querySelector("#base-class-test")
-let derivedClassTestElement = document.querySelector("#drived-class-test")
+let derivedClassTestElement = document.querySelector("#derived-class-test")
 let derivedClass2TestElement = document.querySelector("#derived-class-2-test")
 
 //wrap everything in try catch since they won't have classes to begin with
@@ -11,6 +11,7 @@ try {
         baseClassTestElement.style.color = "green"
     }
 } catch (error) {
+    baseClassTestElement.style.color = "red"
     console.log("some base class tests have failed error:", error)
 }
 
@@ -37,5 +38,18 @@ try {
         derivedClassTestElement.style.color = "green"
     }
 } catch (error) {
+    derivedClassTestElement.style.color = "red"
     console.log("some derived class tests have failed error:", error)
+}
+
+try {
+    let jesla = new EVSedan("Jesla", true)
+
+    if (jesla.model === "Jesla" && jesla.drive() === "Jesla drives" && jesla.recharge() === "Jesla recharges"){
+        derivedClass2TestElement.textContent = "Passed"
+        derivedClass2TestElement.style.color = "green"
+    }
+} catch (error) {
+    derivedClass2TestElement.style.color = "red"
+    console.log("some derived class 2 tests have failed error:", error)
 }
