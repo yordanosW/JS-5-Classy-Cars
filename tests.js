@@ -45,7 +45,7 @@ try {
 }
 
 try {
-    let jesla = new EVSedan("Jesla", true)
+    let jesla = new ElectricSedan ("Jesla", true)
 
     if (jesla.model === "Jesla" && jesla.drive() === "Jesla drives" && jesla.recharge() === "Jesla recharges"){
         derivedClass2TestElement.textContent = "Passed"
